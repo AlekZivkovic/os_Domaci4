@@ -40,15 +40,15 @@ The files being processed will always be ASCII encoded files, and will contain a
 
 The user should be able to interact with the system completely freely, regardless of whether some jobs are performed in watcher and worker threads. The user can issue the following commands to the system:
 
-#add\_dir \<dir\>;
+add\_dir \<dir\>;
 
 The argument to this command is a directory, given as a relative or absolute path. This directory is the new root for our system, and this command should create a watcher thread for it. If this directory is already present in the system, an error should be reported. There is no need to go deeper into this directory at this time, because its watcher thread will create a watcher thread for subdirectories.
 
-#remove\_dir \<dir\>;
+remove\_dir \<dir\>;
 
 The argument to this command is the directory that is rooted in one of the trees being viewed. If a path is specified for which this is not the case, an error should be reported. The specified tree is removed from the results, and all watcher threads for the directories in that tree are turned off.
 
-#result [path]
+result [path]
 
 The argument to this command is the path within the result forest - it can be a directory or a file. If the path is for a file, then the result should be printed for that file, and if it is a directory, the number of prime numbers in that directory should be printed in a structured way, as well as for all its files and subdirectories. If the DirA directory contains FileA1, FileA2 and DirB subdirectories with FileB1 and FileB2 files, the printout could be:
 
